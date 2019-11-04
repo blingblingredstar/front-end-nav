@@ -2,9 +2,8 @@ const getState = () => {
   const defaultState = [
     {
       logo: {
-        type: 'img',
-        content:
-          'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268/sign=1e6e214ea31ea8d38a227302af0b30cf/7c1ed21b0ef41bd580fa7e0154da81cb38db3d9d.jpg',
+        type: 'String',
+        content: '哔',
       },
       url: 'https://www.bilibili.com/',
       name: '哔哩哔哩',
