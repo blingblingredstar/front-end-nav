@@ -116,7 +116,8 @@ const closeModal = () => {
 
 const addSite = () => {
   showModal()
-  $('.modal-btn').one('click', () => {
+  $('.modal-btn').on('click', (e) => {
+    e.stopPropagation()
     const url = $('.modal-input-url').val()
     const name = $('.modal-input-name').val()
 
