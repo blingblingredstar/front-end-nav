@@ -122,38 +122,38 @@ var getState = function getState() {
   var defaultState = [{
     logo: {
       type: 'String',
-      content: '哔'
+      content: 'F'
     },
-    url: 'https://www.bilibili.com/',
-    name: '哔哩哔哩'
+    url: 'https://www.freecodecamp.org/',
+    name: 'freeCodeCamp'
   }, {
     logo: {
       type: 'String',
-      content: '知'
+      content: 'C'
     },
-    url: 'https://www.zhihu.com/',
-    name: '知乎'
+    url: 'https://css-tricks.com/',
+    name: 'CSS-TRICKS'
   }, {
     logo: {
       type: 'String',
-      content: 'B'
+      content: 'R'
     },
-    url: 'https://www.bilibili.com/',
-    name: 'bilibili.com'
+    url: 'https://zh-hans.reactjs.org/',
+    name: 'React中文文档'
   }, {
     logo: {
       type: 'String',
-      content: 'B'
+      content: 'V'
     },
-    url: 'https://www.bilibili.com/',
-    name: 'bilibili.com'
+    url: 'https://cn.vuejs.org/index.html',
+    name: 'Vue中文文档'
   }, {
     logo: {
       type: 'String',
-      content: 'B'
+      content: 'A'
     },
-    url: 'https://www.bilibili.com/',
-    name: 'bilibili.com'
+    url: 'https://angular.cn/',
+    name: 'angular中文文档'
   }];
   var state = JSON.parse(localStorage.getItem('state'));
 
@@ -229,4 +229,4 @@ function deleteSite() {
 $('.site-add').on('click', addSite);
 render(getState());
 },{}]},{},["d6sW"], null)
-//# sourceMappingURL=main.9cd5c7af.js.map
+//# sourceMappingURL=main.3231d3b3.js.map
