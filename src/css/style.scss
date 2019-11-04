@@ -1,0 +1,206 @@
+@import './normolize.scss';
+@import './variable';
+@import './layout';
+
+body {
+  background: $bg-color;
+}
+
+.global-header {
+  .search-input {
+    border: 1px solid $color-secondary;
+    border-radius: $radius;
+    font-size: $font-size-small;
+    box-shadow: 0 2px 4px 0px $color-secondary;
+    padding-left: 12px;
+    color: $color-primary;
+
+    &::placeholder {
+      color: $color-text;
+    }
+  }
+
+  .search-btn {
+    background: $color-secondary;
+    color: $color-text;
+    border: none;
+    border-radius: $radius;
+    font-size: 0.9em;
+    box-shadow: 0 2px 4px 0px $color-secondary;
+
+    z-index: 0;
+    position: relative;
+
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      background-color: $color-primary;
+      transform-origin: center;
+      transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+      transition: transform 0.15s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+    }
+
+    &:hover::before {
+      transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+    }
+  }
+}
+
+.global-main {
+  .site-list {
+    .site-item,
+    .site-add {
+      border: 1px solid $color-text;
+      border-radius: $radius;
+      background: $list-item-bg;
+      padding: $gap;
+      box-shadow: 0 2px 4px 0px $color-secondary;
+
+      &:hover {
+        animation: jelly 0.5s;
+        box-shadow: 0 4px 6px 0px $color-secondary;
+      }
+      a {
+        color: $color-primary;
+      }
+      .site-logo {
+        font-size: $font-size-logo;
+        line-height: 1.2;
+        .site-logo-img {
+          max-width: 100%;
+          max-height: 64px;
+          font-size: 0.4em;
+        }
+      }
+    }
+    .site-add {
+      color: $color-primary;
+      svg {
+        fill: $color-secondary;
+      }
+    }
+
+    .site-item {
+      position: relative;
+    }
+    .site-item-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      fill: $color-text;
+      &:hover {
+        fill: $color-primary;
+      }
+      svg {
+        width: 2.5em;
+        height: 2.5em;
+      }
+    }
+  }
+}
+
+.modal {
+  background: hsla(0, 0, 0, 50%);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.closed {
+  opacity: 0;
+  z-index: -1;
+}
+.modal-form {
+  width: 300px;
+  height: 200px;
+  background: #fff;
+  color: $color-primary;
+  font-size: 16px;
+  border-radius: $radius;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  input {
+    margin-top: 10px;
+    background: $color-text;
+    border: none;
+    border-radius: $radius;
+    font-size: 16px;
+    color: $color-primary;
+    padding: 10px 6px;
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  button {
+    font-size: 14px;
+    margin-top: 20px;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: $radius;
+    outline: none;
+    border: none;
+    background-color: $color-primary;
+  }
+
+  button:hover {
+    cursor: pointer;
+    animation: jelly 0.5s;
+  }
+
+  .modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    fill: $color-text;
+    &:hover {
+      fill: $color-primary;
+    }
+  }
+}
+
+@keyframes jelly {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.95, 1.05);
+  }
+  50% {
+    transform: scale(1.05, 0.95);
+  }
+  75% {
+    transform: scale(0.975, 1.025);
+  }
+}
