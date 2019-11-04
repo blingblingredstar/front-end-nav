@@ -5,7 +5,7 @@
 使用parcel构建，本地全局安装parcel
 
 ```sh
-npm i global parcel
+npm i -g parcel
 ```
 
 本地预览
